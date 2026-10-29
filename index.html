@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary Meta Tags -->
+  <title>Bhoomika Dobhal | Software Engineering Intern Candidate</title>
+  <meta name="title" content="Sudhanshu Kumar | Software Engineering Intern Candidate">
+  <meta name="description"
+    content="Portfolio of Sudhanshu Kumar - Computer Science student and Software Engineer Intern candidate specializing in Full-Stack Web, Distributed Systems, High-Performance APIs, and Algorithms.">
+  <meta name="keywords"
+    content="Software Engineer Intern, Full Stack Developer, CS Student Portfolio, Backend Developer, React, Node.js, Python, Go, Docker, Algorithms, LeetCode">
+  <meta name="author" content="Sudhanshu Kumar">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Open Graph / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sudhanshu Kumar | Software Engineer Intern Candidate">
+  <meta property="og:description"
+    content="Explore production projects, architectural deep-dives, competitive coding metrics, and resume. Available for Summer / Fall internships.">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              300: '#c4b5fd',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+              700: '#6d28d9',
+              800: '#5b21b6',
+              900: '#4c1d95',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body class="bg-white text-slate-800 antialiased selection:bg-brand-100 selection:text-brand-900">
+
+  <!-- Subtle Ambient Purple Glows & Particle Canvas -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="ambient-purple-glow"></div>
+  <div class="ambient-purple-glow-left"></div>
+
+  <!-- ==========================================================================
+       NAVIGATION BAR (RESPONSIVE ON MOBILE, TABLET & DESKTOP)
+       ========================================================================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 navbar-glass">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+
+        <!-- Brand Logo -->
+        <a href="#"
+          class="flex items-center gap-2.5 text-lg font-black tracking-tight text-slate-900 hover:opacity-90 transition">
+          <span class="w-3 h-3 rounded-full bg-brand-600 shadow-sm shadow-brand-500/50"></span>
+          <span class="data-name">Sudhanshu.dev</span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="#about" class="nav-link text-sm font-medium text-slate-600 hover:text-brand-600">About</a>
+          <a href="#recruiter-cheat" class="nav-link text-sm font-medium text-slate-600 hover:text-brand-600">Quick
+            Scan</a>
+          <a href="#skills" class="nav-link text-sm font-medium text-slate-600 hover:text-brand-600">Skills</a>
+          <a href="#projects" class="nav-link text-sm font-medium text-slate-600 hover:text-brand-600">Projects</a>
+          <a href="#experience" class="nav-link text-sm font-medium text-slate-600 hover:text-brand-600">Experience</a>
+          <a href="#contact" class="nav-link text-sm font-medium text-slate-600 hover:text-brand-600">Contact</a>
+        </nav>
+
+        <!-- Right Action Button & Mobile Hamburger -->
+        <div class="flex items-center gap-3">
+          <button
+            class="data-resume-download inline-flex items-center gap-2 px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl bg-brand-600 text-white hover:bg-brand-700 shadow-sm shadow-brand-500/20 transition-all duration-200">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            <span>Resume</span>
+          </button>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button id="mobile-menu-toggle"
+            class="md:hidden p-2 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-100 transition"
+            aria-label="Toggle Navigation Menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu"
+      class="hidden md:hidden bg-white/95 backdrop-blur-md border-b border-slate-200 px-4 pt-2 pb-5 space-y-3">
+      <a href="#about" class="block text-sm font-medium text-slate-700 hover:text-brand-600 py-1">About</a>
+      <a href="#recruiter-cheat" class="block text-sm font-medium text-slate-700 hover:text-brand-600 py-1">Quick
+        Scan</a>
+      <a href="#skills" class="block text-sm font-medium text-slate-700 hover:text-brand-600 py-1">Skills</a>
+      <a href="#projects" class="block text-sm font-medium text-slate-700 hover:text-brand-600 py-1">Projects</a>
+      <a href="#experience" class="block text-sm font-medium text-slate-700 hover:text-brand-600 py-1">Experience</a>
+      <a href="#contact" class="block text-sm font-medium text-slate-700 hover:text-brand-600 py-1">Contact</a>
+    </div>
+  </header>
+
+  <main class="relative z-10 pt-24 sm:pt-28">
+
+    <!-- ==========================================================================
+         HERO SECTION (MINIMALIST WHITE WITH SUBTLE PURPLE ACCENTS)
+         ========================================================================== -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16" id="hero">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+        <!-- Left: Value Proposition & Recruiter Action CTAs -->
+        <div class="lg:col-span-7">
+
+          <!-- Recruiter Availability Badge -->
+          <div
+            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs sm:text-sm font-medium mb-5 shadow-sm">
+            <span class="badge-status-dot"></span>
+            <span id="hero-status-badge">Available for Summer / Fall Internships</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.15] mb-4">
+            Hi, I'm <span class="text-purple-gradient data-name">Sudhanshu</span>.
+          </h1>
+
+          <!-- Dynamic Typing Line -->
+          <div class="text-lg sm:text-xl font-semibold text-slate-600 mb-5 min-h-[1.75rem] flex items-center">
+            <span class="text-slate-400 mr-2">Focus:</span>
+            <span id="typing-text" class="text-brand-700"></span>
+            <span class="typing-cursor">|</span>
+          </div>
+
+          <!-- Concise Bio -->
+          <p class="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed mb-8" id="hero-short-bio">
+            Computer Science undergraduate passionate about building resilient distributed systems, scalable web
+            backends, and elegant user interfaces. Eager to deliver high-impact code as a Software Engineer Intern.
+          </p>
+
+          <!-- Primary CTAs -->
+          <div class="flex flex-wrap items-center gap-3.5 mb-8">
+            <a href="#projects"
+              class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-brand-600 text-white font-semibold text-sm hover:bg-brand-700 shadow-sm shadow-brand-500/25 transition">
+              <span>Explore Projects</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+
+            <button
+              class="data-resume-download inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white border border-slate-200 text-slate-700 font-semibold text-sm hover:border-brand-300 hover:bg-brand-50/50 shadow-sm transition">
+              <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              <span>View Resume</span>
+            </button>
+
+            <button id="btn-copy-email"
+              class="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-white border border-slate-200 text-slate-700 font-semibold text-sm hover:border-brand-300 hover:bg-brand-50/50 shadow-sm transition"
+              title="Copy Email">
+              <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+              <span>Copy Email</span>
+            </button>
+          </div>
+
+          <!-- Social Quick Links -->
+          <div class="flex items-center gap-4 text-slate-500 text-sm">
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Connect:</span>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              class="data-github-link hover:text-brand-600 font-medium transition">GitHub</a>
+            <span>•</span>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              class="data-linkedin-link hover:text-brand-600 font-medium transition">LinkedIn</a>
+            <span>•</span>
+            <a href="mailto:sudhanshu.dev@example.com"
+              class="data-email-link hover:text-brand-600 font-medium transition">Email</a>
+          </div>
+
+        </div>
+
+        <!-- Right: Developer CLI Terminal Widget -->
+        <div class="lg:col-span-5">
+          <div class="terminal-window" id="recruiter-terminal">
+
+            <!-- Terminal Header -->
+            <div class="terminal-header flex items-center justify-between">
+              <div class="flex items-center gap-1.5">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+              </div>
+              <div class="text-xs font-semibold text-slate-500">sudhanshu@dev-box: ~</div>
+              <span
+                class="text-[10px] font-bold px-2 py-0.5 rounded bg-brand-50 text-brand-700 border border-brand-200">Terminal</span>
+            </div>
+
+            <!-- Terminal Output Area -->
+            <div class="terminal-body" id="terminal-output-area">
+              <!-- Dynamically populated via js/terminal.js -->
+            </div>
+
+            <!-- Quick Run Pills -->
+            <div class="p-2.5 bg-slate-50 border-t border-slate-100 flex flex-wrap items-center gap-1.5">
+              <span class="text-[11px] text-slate-400 font-medium mr-1">Quick run:</span>
+              <button class="terminal-pill-btn" data-term-cmd="skills">skills</button>
+              <button class="terminal-pill-btn" data-term-cmd="projects">projects</button>
+              <button class="terminal-pill-btn" data-term-cmd="stats">stats</button>
+              <button class="terminal-pill-btn" data-term-cmd="hire">hire</button>
+              <button class="terminal-pill-btn" data-term-cmd="clear">clear</button>
+            </div>
+
+            <!-- Prompt Input Row -->
+            <div class="px-3.5 py-2.5 bg-white border-t border-slate-100 flex items-center gap-2 text-xs font-mono">
+              <span class="terminal-prompt-user">recruiter</span>:<span class="terminal-prompt-path">~</span>$&nbsp;
+              <input type="text" id="terminal-cli-input"
+                class="w-full bg-transparent outline-none text-slate-800 placeholder-slate-400 font-mono text-xs"
+                placeholder="type 'help' or any command..." autocomplete="off" spellcheck="false">
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Candidate Impact Metrics Row -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 sm:mt-16 pt-8 border-t border-slate-100"
+        id="hero-stats-row">
+        <!-- Populated via js/main.js -->
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         RECRUITER 15-SECOND FAST-TRACK / CHEAT SHEET
+         ========================================================================== -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8" id="recruiter-cheat">
+      <div class="bg-white border border-brand-200/80 rounded-2xl p-6 sm:p-8 shadow-sm relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-500 via-indigo-500 to-brand-600">
+        </div>
+
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+          <div>
+            <span
+              class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 border border-brand-200 mb-1">Recruiter
+              Fast-Track</span>
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900">15-Second Recruiter Cheat Sheet</h2>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-500">Everything needed to screen my candidacy in under 30 seconds.</p>
+        </div>
+
+        <div id="recruiter-snapshot-content">
+          <!-- Populated via js/main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT ME & PHILOSOPHY
+         ========================================================================== -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="about">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span
+          class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 border border-brand-200 mb-2">Background</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Engineering Rigor & Problem Solving</h2>
+        <p class="text-sm sm:text-base text-slate-600 mt-2">What motivates my code, architecture choices, and daily
+          practice.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="minimal-card p-6">
+          <div
+            class="w-12 h-12 rounded-xl bg-brand-50 border border-brand-200 text-brand-700 flex items-center justify-center text-xl mb-4">
+            🚀</div>
+          <h3 class="text-base font-bold text-slate-900 mb-2">Systems & Resilient Architecture</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Passionate about backend throughput, caching layers, and asynchronous task queues. I focus on writing
+            reliable code that behaves gracefully under high load.
+          </p>
+        </div>
+
+        <div class="minimal-card p-6">
+          <div
+            class="w-12 h-12 rounded-xl bg-brand-50 border border-brand-200 text-brand-700 flex items-center justify-center text-xl mb-4">
+            🧩</div>
+          <h3 class="text-base font-bold text-slate-900 mb-2">Algorithmic Problem Solving</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            With 450+ solved challenges across LeetCode, Codeforces, and GFG, I approach complex constraints, recursion
+            trees, and edge cases with systematic proofs.
+          </p>
+        </div>
+
+        <div class="minimal-card p-6">
+          <div
+            class="w-12 h-12 rounded-xl bg-brand-50 border border-brand-200 text-brand-700 flex items-center justify-center text-xl mb-4">
+            🤝</div>
+          <h3 class="text-base font-bold text-slate-900 mb-2">Collaboration & Velocity</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Code isn't complete until it's tested, documented, and shipped. I bring clear communication, thoughtful pull
+            request reviews, and high ownership to fast-paced teams.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         TECHNICAL SKILLS MATRIX
+         ========================================================================== -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="skills">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span
+          class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 border border-brand-200 mb-2">Technical
+          Arsenal</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Skills & Production Technologies</h2>
+        <p class="text-sm sm:text-base text-slate-600 mt-2">Tools and languages battle-tested through full-stack
+          projects, open source, and coursework.</p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-8" id="skills-tabs">
+        <!-- Populated via js/main.js -->
+      </div>
+
+      <!-- Skills Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="skills-grid">
+        <!-- Populated via js/main.js -->
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FEATURED PROJECTS
+         ========================================================================== -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="projects">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span
+          class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 border border-brand-200 mb-2">Proven
+          Code</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Featured Engineering Projects</h2>
+        <p class="text-sm sm:text-base text-slate-600 mt-2">Real-world applications built with clean architecture,
+          measurable throughput, and end-to-end testing.</p>
+      </div>
+
+      <!-- Project Category Filters -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-8">
+        <button
+          class="project-filter-btn px-4 py-1.5 text-xs sm:text-sm font-semibold rounded-full border border-slate-200 text-slate-700 bg-white hover:border-brand-300 transition active"
+          data-filter="all">All Systems</button>
+        <button
+          class="project-filter-btn px-4 py-1.5 text-xs sm:text-sm font-semibold rounded-full border border-slate-200 text-slate-700 bg-white hover:border-brand-300 transition"
+          data-filter="featured">⭐ Featured Only</button>
+        <button
+          class="project-filter-btn px-4 py-1.5 text-xs sm:text-sm font-semibold rounded-full border border-slate-200 text-slate-700 bg-white hover:border-brand-300 transition"
+          data-filter="backend">Backend & Infra</button>
+        <button
+          class="project-filter-btn px-4 py-1.5 text-xs sm:text-sm font-semibold rounded-full border border-slate-200 text-slate-700 bg-white hover:border-brand-300 transition"
+          data-filter="fullstack">Full-Stack</button>
+        <button
+          class="project-filter-btn px-4 py-1.5 text-xs sm:text-sm font-semibold rounded-full border border-slate-200 text-slate-700 bg-white hover:border-brand-300 transition"
+          data-filter="ai">AI & Tools</button>
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
+        <!-- Populated via js/main.js -->
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CAREER & EDUCATION TIMELINE
+         ========================================================================== -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="experience">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span
+          class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 border border-brand-200 mb-2">Timeline</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Experience & Academic Background</h2>
+        <p class="text-sm sm:text-base text-slate-600 mt-2">Internships, leadership roles, and academic foundations.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Work & Leadership -->
+        <div class="lg:col-span-7">
+          <h3 class="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+            <span>💼</span> Work & Leadership Experience
+          </h3>
+          <div class="timeline-track" id="experience-timeline">
+            <!-- Populated via js/main.js -->
+          </div>
+        </div>
+
+        <!-- Formal Education -->
+        <div class="lg:col-span-5">
+          <h3 class="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+            <span>🎓</span> Formal Degree & Coursework
+          </h3>
+          <div id="education-cards">
+            <!-- Populated via js/main.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ACHIEVEMENTS & ENDORSEMENTS
+         ========================================================================== -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="achievements">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span
+          class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 border border-brand-200 mb-2">Recognition</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Certifications & Contests</h2>
+        <p class="text-sm sm:text-base text-slate-600 mt-2">Milestones achieved under competitive peer benchmarking.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-14" id="achievements-grid">
+        <!-- Populated via js/main.js -->
+      </div>
+
+      <div class="text-center max-w-xl mx-auto mb-8">
+        <h3 class="text-xl font-bold text-slate-900">Mentor & Professor Endorsements</h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="recommendations-grid">
+        <!-- Populated via js/main.js -->
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT SECTION
+         ========================================================================== -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="contact">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span
+          class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 border border-brand-200 mb-2">Get
+          In Touch</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Let's Connect for Internships</h2>
+        <p class="text-sm sm:text-base text-slate-600 mt-2">Looking for an enthusiastic, fast-learning engineer? I'm
+          available for technical interviews.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+        <!-- Contact Channels Info Card -->
+        <div class="lg:col-span-5 minimal-card p-6 sm:p-8">
+          <h3 class="text-lg font-bold text-slate-900 mb-3">Direct Contact Channels</h3>
+          <p class="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">
+            I respond promptly to internship inquiries, interview scheduling, and technical questions. Feel free to
+            connect directly via email or LinkedIn.
+          </p>
+
+          <div class="space-y-4 mb-8">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-9 h-9 rounded-lg bg-brand-50 border border-brand-100 text-brand-700 flex items-center justify-center text-sm font-bold">
+                📧</div>
+              <div>
+                <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Email Address</div>
+                <a href="#"
+                  class="data-email-link email-text text-sm font-semibold text-brand-700 hover:underline">loading...</a>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div
+                class="w-9 h-9 rounded-lg bg-brand-50 border border-brand-100 text-brand-700 flex items-center justify-center text-sm font-bold">
+                💼</div>
+              <div>
+                <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">LinkedIn Profile</div>
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                  class="data-linkedin-link text-sm font-semibold text-brand-700 hover:underline">linkedin.com/in/sudhanshu</a>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div
+                class="w-9 h-9 rounded-lg bg-brand-50 border border-brand-100 text-brand-700 flex items-center justify-center text-sm font-bold">
+                🐙</div>
+              <div>
+                <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">GitHub Profile</div>
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                  class="data-github-link text-sm font-semibold text-brand-700 hover:underline">github.com/sudhanshu</a>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div
+                class="w-9 h-9 rounded-lg bg-brand-50 border border-brand-100 text-brand-700 flex items-center justify-center text-sm font-bold">
+                📍</div>
+              <div>
+                <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Location</div>
+                <div class="text-sm font-semibold text-slate-800">Bengaluru, India (Open to Remote & Global Relocation)
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button
+            class="data-resume-download w-full py-3 rounded-xl bg-brand-600 text-white font-semibold text-sm hover:bg-brand-700 shadow-sm shadow-brand-500/20 transition flex items-center justify-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            <span>Download Official Resume (PDF)</span>
+          </button>
+        </div>
+
+        <!-- Interactive Direct Message Form -->
+        <div class="lg:col-span-7 minimal-card p-6 sm:p-8">
+          <h3 class="text-lg font-bold text-slate-900 mb-1">Send a Message</h3>
+          <p class="text-xs text-slate-500 mb-6">Fires directly to my mailbox so we can schedule an interview.</p>
+
+          <form id="contact-form" class="space-y-4">
+            <div>
+              <label for="contact-name"
+                class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Your Name or Organization
+                *</label>
+              <input type="text" id="contact-name"
+                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-900 outline-none focus:border-brand-500 focus:bg-white transition"
+                placeholder="e.g. Google Recruiting / Sarah" required>
+            </div>
+
+            <div>
+              <label for="contact-email"
+                class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Your Work Email *</label>
+              <input type="email" id="contact-email"
+                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-900 outline-none focus:border-brand-500 focus:bg-white transition"
+                placeholder="e.g. recruiter@company.com" required>
+            </div>
+
+            <div>
+              <label for="contact-message"
+                class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Message / Role Details
+                *</label>
+              <textarea id="contact-message" rows="4"
+                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-900 outline-none focus:border-brand-500 focus:bg-white transition resize-y"
+                placeholder="Tell me about the team, role, or problem space..." required></textarea>
+            </div>
+
+            <button type="submit"
+              class="w-full py-3 rounded-xl bg-slate-900 text-white font-semibold text-sm hover:bg-brand-600 transition flex items-center justify-center gap-2 shadow-sm">
+              <span>Send Message</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="border-t border-slate-100 bg-slate-50/70 py-8 relative z-10">
+    <div
+      class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <div>
+        <span class="font-bold text-slate-800 data-name">Sudhanshu Kumar</span>
+        <span> — Designed with HTML, CSS, Tailwind CSS & JavaScript.</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="#hero" class="text-brand-700 font-semibold hover:underline">Back to top ↑</a>
+        <span>•</span>
+        <span>Clean, minimal & user-friendly</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       NATIVE MODAL: PROJECT ARCHITECTURE DEEP DIVE
+       ========================================================================== -->
+  <dialog id="project-detail-dialog">
+    <div class="p-6 border-b border-slate-100 flex items-center justify-between">
+      <div>
+        <h3 id="modal-project-title" class="text-lg font-bold text-slate-900">Project Title</h3>
+        <p id="modal-project-tagline" class="text-xs text-brand-700 font-medium">Project Tagline</p>
+      </div>
+      <button class="text-slate-400 hover:text-slate-800 text-2xl font-bold leading-none p-1"
+        id="btn-close-project-modal" aria-label="Close dialog">&times;</button>
+    </div>
+
+    <div class="p-6 space-y-5 max-h-[70vh] overflow-y-auto">
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Technologies Used</h4>
+        <div id="modal-project-tech" class="flex flex-wrap gap-1.5"></div>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">Executive Summary</h4>
+        <p id="modal-project-summary" class="text-xs sm:text-sm text-slate-700 leading-relaxed"></p>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">System Architecture & Data Flow
+        </h4>
+        <div class="bg-slate-900 text-purple-300 rounded-xl p-4 text-xs font-mono overflow-x-auto"
+          id="modal-project-architecture"></div>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Impact & Measured Metrics</h4>
+        <ul id="modal-project-metrics" class="space-y-1.5"></ul>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Engineering Highlights & Trade-Offs
+        </h4>
+        <ul id="modal-project-highlights" class="space-y-1.5"></ul>
+      </div>
+    </div>
+
+    <div class="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-end gap-3">
+      <a id="modal-project-github" href="#" target="_blank" rel="noopener noreferrer"
+        class="px-4 py-2 rounded-lg border border-slate-200 text-slate-700 text-xs font-semibold hover:border-brand-300 hover:bg-brand-50 transition">
+        View Source (GitHub)
+      </a>
+      <a id="modal-project-live" href="#" target="_blank" rel="noopener noreferrer"
+        class="px-4 py-2 rounded-lg bg-brand-600 text-white text-xs font-semibold hover:bg-brand-700 transition">
+        Launch Live Demo ↗
+      </a>
+    </div>
+  </dialog>
+
+  <!-- ==========================================================================
+       NATIVE MODAL: RESUME PREVIEW
+       ========================================================================== -->
+  <dialog id="resume-dialog">
+    <div class="p-6 border-b border-slate-100 flex items-center justify-between">
+      <div>
+        <h3 class="text-lg font-bold text-slate-900">Candidate Resume Preview</h3>
+        <p class="text-xs text-brand-700 font-medium">Sudhanshu Kumar • Software Engineering Candidate</p>
+      </div>
+      <button class="text-slate-400 hover:text-slate-800 text-2xl font-bold leading-none p-1"
+        id="btn-close-resume-modal" aria-label="Close dialog">&times;</button>
+    </div>
+
+    <div class="p-6 max-h-[70vh] overflow-y-auto">
+      <div class="border border-slate-200 rounded-xl p-6 bg-slate-50/50 space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-slate-200 pb-4">
+          <div>
+            <h2 class="text-xl font-bold text-slate-900">Sudhanshu Kumar</h2>
+            <div class="text-brand-700 font-semibold text-sm">Software Engineering Intern</div>
+            <div class="text-xs text-slate-500 mt-1">sudhanshu.dev@example.com | Bengaluru, India</div>
+          </div>
+          <a href="assets/resume-preview.html" target="_blank"
+            class="px-4 py-2 rounded-lg bg-brand-600 text-white text-xs font-semibold hover:bg-brand-700 transition inline-flex items-center gap-1.5 self-start">
+            <span>Print / Save PDF</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+            </svg>
+          </a>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider mb-1">Education</h4>
+          <p class="text-xs font-semibold text-slate-800">B.Tech in Computer Science & Engineering (2022 - 2026)</p>
+          <p class="text-xs text-slate-500">GPA: 8.9 / 10.0 • Top 5% of department</p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider mb-1">Key Technical Stack</h4>
+          <p class="text-xs leading-relaxed text-slate-700">
+            <strong>Languages:</strong> C++, Python, TypeScript, JavaScript, Go, SQL<br>
+            <strong>Frameworks:</strong> React 19, Next.js 14, Node.js, Express, FastAPI, Tailwind CSS<br>
+            <strong>Infrastructure:</strong> Docker, AWS (S3, EC2), PostgreSQL, Redis, Linux, Git CI/CD
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider mb-1">Selected Projects</h4>
+          <ul class="text-xs space-y-1.5 list-disc pl-4 text-slate-700">
+            <li><strong>CloudScale:</strong> Distributed task queue processing 12,500 jobs/min with &lt;15ms latency
+              (Go, Redis, Docker).</li>
+            <li><strong>DevPulse:</strong> AI-powered PR reviewer reducing code review turnaround time by 35% (Next.js,
+              FastAPI, Gemini API).</li>
+            <li><strong>StreamSphere:</strong> Real-time multiplayer whiteboard supporting 50 concurrent sketchers
+              (React, WebSockets).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-end gap-3">
+      <button
+        class="px-4 py-2 rounded-lg border border-slate-200 text-slate-700 text-xs font-semibold hover:bg-slate-100 transition"
+        onclick="document.getElementById('resume-dialog').close()">Close</button>
+      <a href="mailto:sudhanshu.dev@example.com?subject=Interview%20Invitation%20for%20Sudhanshu%20Kumar"
+        class="px-4 py-2 rounded-lg bg-brand-600 text-white text-xs font-semibold hover:bg-brand-700 transition">
+        Schedule Interview via Email
+      </a>
+    </div>
+  </dialog>
+
+  <!-- Modular Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/terminal.js"></script>
+  <script src="js/canvas.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
